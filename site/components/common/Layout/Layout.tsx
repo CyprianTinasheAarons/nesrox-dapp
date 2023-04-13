@@ -19,7 +19,7 @@ import type { Category } from '@commerce/types/site'
 import type { Link as LinkProps } from '../UserNav/MenuSidebarView'
 
 const Loading = () => (
-  <div className="w-80 h-80 flex items-center text-center justify-center p-3">
+  <div className="flex items-center justify-center p-3 text-center w-80 h-80">
     <LoadingDots />
   </div>
 )
@@ -117,7 +117,7 @@ const Layout: React.FC<Props> = ({
   return (
     <CommerceProvider locale={locale}>
       <div className={cn(s.root)}>
-        <Navbar links={navBarlinks} />
+        <Navbar />
         <main className="fit">{children}</main>
         <Footer pages={pageProps.pages} />
         <ModalUI />
