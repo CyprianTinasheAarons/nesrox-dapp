@@ -77,7 +77,7 @@ const UserNav: React.FC<{
             </Dropdown>
           </li>
         )}
-        <li className={s.mobileMenu}>
+        {/* <li className={s.mobileMenu}>
           <Button
             className={s.item}
             aria-label="Menu"
@@ -89,7 +89,7 @@ const UserNav: React.FC<{
           >
             <Menu />
           </Button>
-        </li>
+        </li> */}
       </ul>
     </nav>
   )

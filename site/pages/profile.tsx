@@ -27,17 +27,17 @@ export default function Profile() {
       <Text variant="pageHeading">My Profile</Text>
       <div className="grid grid-cols-4">
         {data && (
-          <div className="flex flex-col divide-accent-2 divide-y">
-            <div className="flex flex-row items-center space-x-4 py-4">
-              <span className="text-lg font-medium text-accent-600 flex-1">
+          <div className="flex flex-col divide-y divide-accent-2">
+            <div className="flex flex-row items-center py-4 space-x-4">
+              <span className="flex-1 text-lg font-medium text-accent-600">
                 Full Name
               </span>
               <span>
                 {data.firstName} {data.lastName}
               </span>
             </div>
-            <div className="flex flex-row items-center space-x-4 py-4">
-              <span className="text-lg font-medium text-accent-600 flex-1">
+            <div className="flex flex-row items-center py-4 space-x-4">
+              <span className="flex-1 text-lg font-medium text-accent-600">
                 Email
               </span>
               <span>{data.email}</span>

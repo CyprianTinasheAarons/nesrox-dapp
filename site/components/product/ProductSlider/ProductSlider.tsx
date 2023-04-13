@@ -7,7 +7,6 @@ import React, {
   useEffect,
 } from 'react'
 import cn from 'clsx'
-import { a } from '@react-spring/web'
 import s from './ProductSlider.module.css'
 import ProductSliderControl from '../ProductSliderControl'
 
@@ -83,7 +82,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
         ref={ref}
         className={cn(s.slider, { [s.show]: isMounted }, 'keen-slider')}
       >
-        {slider && <ProductSliderControl onPrev={onPrev} onNext={onNext} />}
+
         {Children.map(children, (child) => {
           // Add the keen-slider__slide className to children
           if (isValidElement(child)) {
@@ -91,37 +90,17 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
               ...child,
               props: {
                 ...child.props,
-                className: `${
-                  child.props.className ? `${child.props.className} ` : ''
-                }keen-slider__slide`,
+                className: `${child.props.className ? `${child.props.className} ` : ''
+                  }keen-slider__slide`,
               },
             }
           }
           return child
         })}
       </div>
+      {slider && <ProductSliderControl onPrev={onPrev} onNext={onNext} />}
 
-      <a.div className={s.album} ref={thumbsContainerRef}>
-        {slider &&
-          Children.map(children, (child, idx) => {
-            if (isValidElement(child)) {
-              return {
-                ...child,
-                props: {
-                  ...child.props,
-                  className: cn(child.props.className, s.thumb, {
-                    [s.selected]: currentSlide === idx,
-                  }),
-                  id: `thumb-${idx}`,
-                  onClick: () => {
-                    slider.current?.moveToIdx(idx)
-                  },
-                },
-              }
-            }
-            return child
-          })}
-      </a.div>
+
     </div>
   )
 }

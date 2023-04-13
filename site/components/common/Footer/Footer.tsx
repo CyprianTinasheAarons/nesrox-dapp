@@ -30,68 +30,25 @@ const Footer: FC<Props> = ({ className, pages }) => {
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-b border-accent-2 py-12 text-primary bg-primary transition-colors duration-150">
-          <div className="col-span-1 lg:col-span-2">
-            <Link
-              href="/"
-              className="flex flex-initial items-center font-bold md:mr-24"
-            >
-              <span className="rounded-full border border-accent-6 mr-2">
-                <Logo />
-              </span>
-              <span>ACME</span>
-            </Link>
-          </div>
-          <div className="col-span-1 lg:col-span-7">
-            <div className="grid md:grid-rows-4 md:grid-cols-3 md:grid-flow-col">
-              {[...links, ...sitePages].map((page) => (
-                <span key={page.url} className="py-3 md:py-0 md:pb-4">
-                  <Link
-                    href={page.url!}
-                    className="text-accent-9 hover:text-accent-6 transition ease-in-out duration-150"
-                  >
-                    {page.name}
-                  </Link>
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="col-span-1 lg:col-span-3 flex items-start lg:justify-end text-primary">
-            <div className="flex space-x-4 items-center h-10">
-              <ThemeSwitcher />
-              <I18nWidget />
-              <a
-                className={s.link}
-                aria-label="Github Repository"
-                href="https://github.com/vercel/commerce"
-              >
-                <Github />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="pt-6 pb-10 flex flex-col md:flex-row justify-between items-center space-y-4 text-accent-6 text-sm">
+        <div className="flex flex-col items-center justify-between pt-6 pb-10 space-y-4 text-sm md:flex-row text-accent-6">
           <div>
-            <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} Rox Arts Print Shop, Inc. All rights reserved.</span>
           </div>
-          <div className="flex items-center text-primary text-sm">
+          <div className="flex items-center text-sm text-primary">
             <span className="text-primary">Created by</span>
             <a
               rel="noopener noreferrer"
-              href="https://vercel.com"
+              href="https://cyprian.topiax.xyz"
               aria-label="Vercel.com Link"
               target="_blank"
-              className="text-primary"
+              className="ml-1 font-bold text-primary"
             >
-              <Vercel
-                className="inline-block h-6 ml-3 text-primary"
-                alt="Vercel.com Logo"
-              />
+              Cyprian Aarons
             </a>
           </div>
         </div>
       </Container>
-    </footer>
+    </footer >
   )
 }
 

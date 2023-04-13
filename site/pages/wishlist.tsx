@@ -3,7 +3,6 @@ import commerce from '@lib/api/commerce'
 import { Heart } from '@components/icons'
 import { Layout } from '@components/common'
 import { Text, Container, Skeleton } from '@components/ui'
-import { useCustomer } from '@framework/customer'
 import { WishlistCard } from '@components/wishlist'
 import useWishlist from '@framework/wishlist/use-wishlist'
 import rangeMap from '@lib/range-map'
@@ -44,7 +43,7 @@ export default function Wishlist() {
     <Container className="pt-4">
       <div className="mb-20">
         <Text variant="pageHeading">My Wishlist</Text>
-        <div className="group flex flex-col">
+        <div className="flex flex-col group">
           {isLoading ? (
             <div className="grid grid-cols-1 gap-6">
               {rangeMap(4, (i) => (
@@ -54,14 +53,14 @@ export default function Wishlist() {
               ))}
             </div>
           ) : isEmpty ? (
-            <div className="flex-1 px-12 py-24 flex flex-col justify-center items-center ">
-              <span className="border border-dashed border-secondary flex items-center justify-center w-16 h-16 bg-primary p-12 rounded-lg text-primary">
+            <div className="flex flex-col items-center justify-center flex-1 px-12 py-24 ">
+              <span className="flex items-center justify-center w-16 h-16 p-12 border border-dashed rounded-lg border-secondary bg-primary text-primary">
                 <Heart className="absolute" />
               </span>
               <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">
                 Your wishlist is empty
               </h2>
-              <p className="text-accent-6 px-10 text-center pt-2">
+              <p className="px-10 pt-2 text-center text-accent-6">
                 Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
               </p>
             </div>

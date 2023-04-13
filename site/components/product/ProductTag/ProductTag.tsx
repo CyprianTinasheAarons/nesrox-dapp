@@ -1,5 +1,4 @@
-import cn from 'clsx'
-import s from './ProductTag.module.css'
+
 
 interface ProductTagProps {
   className?: string
@@ -11,14 +10,13 @@ interface ProductTagProps {
 const ProductTag: React.FC<ProductTagProps> = ({
   name,
   price,
-  className = '',
   fontSize = 32,
 }) => {
   return (
-    <div className={cn(s.root, className)}>
-      <h3 className={s.name}>
+    <div className="mb-2">
+      <h3 >
         <span
-          className={cn({ [s.fontsizing]: fontSize < 32 })}
+          className="font-bold"
           style={{
             fontSize: `${fontSize}px`,
             lineHeight: `${fontSize}px`,
@@ -27,7 +25,7 @@ const ProductTag: React.FC<ProductTagProps> = ({
           {name}
         </span>
       </h3>
-      <div className={s.price}>{price}</div>
+      <h1 className="text-2xl">{price}</h1>
     </div>
   )
 }

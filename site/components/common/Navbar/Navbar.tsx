@@ -10,28 +10,16 @@ interface Link {
   label: string
 }
 
-interface NavbarProps {
-  links?: Link[]
-}
 
-const Navbar: FC<NavbarProps> = ({ links }) => (
+const Navbar: FC<NavbarProps> = () => (
   <NavbarRoot>
-    <Container clean className="mx-auto max-w-8xl px-6">
+    <Container clean className="w-full px-2 mx-auto sm:px-6 sm:max-w-8xl ">
       <div className={s.nav}>
         <div className="flex items-center flex-1">
-          <Link href="/" className={s.logo} aria-label="Logo">
+          <Link href="/" aria-label="Logo">
             <Logo />
           </Link>
-          <nav className={s.navMenu}>
-            <Link href="/search" className={s.link}>
-              All
-            </Link>
-            {links?.map((l) => (
-              <Link href={l.href} key={l.href} className={s.link}>
-                {l.label}
-              </Link>
-            ))}
-          </nav>
+
         </div>
         {process.env.COMMERCE_SEARCH_ENABLED && (
           <div className="justify-center flex-1 hidden lg:flex">

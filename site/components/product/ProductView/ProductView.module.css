@@ -13,15 +13,15 @@
 }
 
 .sliderContainer {
-  @apply flex items-center justify-center overflow-x-hidden bg-violet;
+  @apply flex items-center justify-center overflow-x-hidden;
 }
 
 .imageContainer {
-  @apply flex items-center justify-center w-full h-full relative;
+  @apply flex items-center justify-center w-full h-full relative rounded-md;
 }
 
 .sliderContainer .img {
-  @apply object-cover h-full;
+  @apply object-contain h-full rounded-md;
 }
 
 .button {

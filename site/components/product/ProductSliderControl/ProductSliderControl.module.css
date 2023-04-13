@@ -1,6 +1,6 @@
 .control {
-  @apply bg-violet absolute bottom-10 right-10 flex flex-row
-  border-accent-0 border text-accent-0 z-30 shadow-xl select-none;
+  @apply absolute bottom-10 right-10 flex flex-row
+  border-black border text-black z-30 shadow-xl select-none rounded-md bg-opacity-50 bg-white;
   height: 48px;
 }
 
@@ -10,18 +10,13 @@
   transition: background-color 0.2s ease;
 }
 
-.leftControl:hover,
-.rightControl:hover {
-  background-color: var(--violet-dark);
-}
-
 .leftControl:focus,
 .rightControl:focus {
   @apply outline-none;
 }
 
 .rightControl {
-  @apply border-l border-accent-0;
+  @apply border-l border-black;
 }
 
 .leftControl {

@@ -48,7 +48,7 @@ export default function CustomerMenuContent() {
           </a>
         </DropdownMenuItem>
       ))}
-      <DropdownMenuItem>
+      {/* <DropdownMenuItem>
         <a
           className={cn(s.link, 'justify-between')}
           onClick={() => {
@@ -66,7 +66,7 @@ export default function CustomerMenuContent() {
             )}
           </div>
         </a>
-      </DropdownMenuItem>
+      </DropdownMenuItem> */}
       <DropdownMenuItem>
         <a
           className={cn(s.link, 'border-t border-accent-2 mt-4')}
