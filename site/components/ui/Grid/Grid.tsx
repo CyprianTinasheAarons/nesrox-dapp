@@ -1,5 +1,5 @@
 import Link from "next/link"
-
+//@ts-ignore
 export default function Grid({ products }) {
   return (
     <div className="bg-white">
